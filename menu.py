@@ -21,12 +21,13 @@ while True:
     elif opcion==3:
         archivo=open("archivo.txt","r")
         nombre=input("Ingrese el nombre: ")
+        c=0
         for x in archivo.readlines():
             if nombre in x:
                 print(x)
-            else:
-                print(f'El nombre {nombre} no esta en la lista')
-                break
+                c+=1
+        if c==0:
+            print(f'El nombre {nombre} no se encuentra registrado en la lista')
         archivo.close()
     elif opcion==4:
         break
